@@ -1,0 +1,11 @@
+{
+  "pathsToIds" : {
+    "mundo_virtual\/Sources\/mundo_virtual\/mundo_virtual.rkassets\/Scene.usda" : "75EC5153-D96C-4570-9A44-816A974BFC05",
+    "mundo_virtual\/Sources\/mundo_virtual\/mundo_virtual.rkassets\/escena.usda" : "BB00397D-01ED-41BA-BBAC-6B26A23D6E84"
+  },
+  "projectID" : 5911280544234393687,
+  "uuidToIntID" : {
+    "75EC5153-D96C-4570-9A44-816A974BFC05" : 6491746283463452836,
+    "BB00397D-01ED-41BA-BBAC-6B26A23D6E84" : -4911998174185034877
+  }
+}
