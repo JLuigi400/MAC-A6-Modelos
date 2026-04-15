@@ -10,83 +10,75 @@
 
 def Xform "Root"
 {
-    reorder nameChildren = ["Moon", "brillitos"]
-    def Xform "brillitos"
+    def "Cloud" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (-1.570796, 0, 0)
+        }
+        references = @Modelos/Cloud.usdz@
+    )
     {
-        float3 xformOp:translate = (0, 0.5, 0)
+        quatf xformOp:orient = (0.7071069, -0.70710665, 0, 0)
+        float3 xformOp:scale = (0.1, 0.1, 0.1)
+        float3 xformOp:translate = (0, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
-        def RealityKitComponent "VFXEmitter"
+        def RealityKitComponent "RCP_BehaviorsContainer"
         {
-            token info:id = "RealityKit.VFXEmitter"
+            rel behaviors = </Root/Cloud/OnAddedToScene>
+            uniform token info:id = "RCP.BehaviorsContainer"
+        }
 
-            def RealityKitStruct "currentState"
+        def Preliminary_Behavior "OnAddedToScene"
+        {
+            rel actions = </Root/Cloud/OnAddedToScene/Action>
+            uniform bool exclusive
+            rel triggers = </Root/Cloud/OnAddedToScene/Trigger>
+
+            def Preliminary_Trigger "Trigger"
             {
-                int64 burstCount = 2
-                double emissionDuration = 0.5
-                token emitterShape = "Sphere"
-                float particleSpeed = 0.5
-                float3 shapeSize = (0.1, 0.5, 0.2)
+                rel affectedObjects = </Root/Cloud>
+                token info:id = "SceneTransition"
+            }
 
-                def RealityKitStruct "mainEmitter"
-                {
-                    float birthRate = 100
-                    token blendMode = "Alpha"
-                    float dampingFactor = 2
-                    float4 endColorA = (0.38593593, 0, 0.0030044345, 1)
-                    bool isLightingEnabled = 0
-                    float noiseScale = 3
-                    float noiseStrength = 0.7
-                    float particleAngularVelocity = 100
-                    float radialGravityStrength = 0
-                    float spreadingAngle = 0.34906584
-                    float4 startColorA = (0.85827374, 0.8750968, 0, 1)
-                    bool useEndColor = 1
-                    bool useEndColorRange = 0
-                    bool useStartColorRange = 0
-                    float3 vortexDirection = (0, 4, 0)
-                    float vortexStrength = 20
-                }
-
-                def RealityKitStruct "spawnedEmitter"
-                {
-                }
+            def Preliminary_Action "Action"
+            {
+                rel affectedObjects = </Root>
+                rel animationLibraryKey = </Root/Rotacion>
+                rel animationLibraryKeyOverrideKey = </Root/Cloud/OnAddedToScene/Trigger>
+                token info:id = "PlayTimeline"
+                int loops = 0
+                int performCount = 1
+                token type = "serial"
             }
         }
     }
 
-    def Xform "PointLight" (
-        customData = {
-            float3 rotationEulerHint = (6.984405e-8, 3.6992382e-9, 2.1448784)
-        }
-    )
+    def RealityKitTimeline "Rotacion"
     {
-        quatf xformOp:orient = (0.47798318, 1.5067492e-8, 3.155851e-8, 0.878369)
-        float3 xformOp:translate = (0.04604262, 1.09756, 0.6219866)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-
-        def RealityKitComponent "PointLight"
+        reorder nameChildren = ["Track3", "Track", "Track2"]
+        def RealityKitTrack "Track2"
         {
-            float attenuationFalloffExponent = 1
-            float attenuationRadius = 50
-            float3 color = (1, 0.8440144, 0)
-            token info:id = "RealityKit.PointLight"
-            float intensity = 30000
         }
-    }
 
-    def "Cloud" (
-        active = true
-        customData = {
-            float3 rotationEulerHint = (-1.570796, 3.1415927, 0)
+        def RealityKitTrack "Track3"
+        {
+            def RealityKitAction "Spin"
+            {
+                string actionKind = "spin"
+                int blendLayer = 400
+                double duration = 2
+                uniform token info:id = "933B971B-ECBA-4296-AE8A-504C88539C6B"
+                float3 localAxis = (0, 0, 1)
+                double startTime = 0
+                rel target = </Root/Cloud>
+
+                def RealityKitStruct "timingFunction"
+                {
+                    token type = "linear"
+                }
+            }
         }
-        prepend references = @Cloud.usdz@
-    )
-    {
-        quatf xformOp:orient = (-3.090862e-8, 3.090862e-8, 0.70710677, 0.70710677)
-        float3 xformOp:scale = (0.5, 0.5, 0.5)
-        float3 xformOp:translate = (0, 0, 0)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 }
 
