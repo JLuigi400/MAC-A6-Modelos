@@ -25,36 +25,13 @@ def Xform "Root"
 
         def RealityKitComponent "RCP_BehaviorsContainer"
         {
-            rel behaviors = </Root/Cloud/OnAddedToScene>
             uniform token info:id = "RCP.BehaviorsContainer"
-        }
-
-        def Preliminary_Behavior "OnAddedToScene"
-        {
-            rel actions = </Root/Cloud/OnAddedToScene/Action>
-            uniform bool exclusive
-            rel triggers = </Root/Cloud/OnAddedToScene/Trigger>
-
-            def Preliminary_Trigger "Trigger"
-            {
-                rel affectedObjects = </Root/Cloud>
-                token info:id = "SceneTransition"
-            }
-
-            def Preliminary_Action "Action"
-            {
-                rel affectedObjects = </Root>
-                rel animationLibraryKey = </Root/Rotacion>
-                rel animationLibraryKeyOverrideKey = </Root/Cloud/OnAddedToScene/Trigger>
-                token info:id = "PlayTimeline"
-                int loops = 0
-                int performCount = 1
-                token type = "serial"
-            }
         }
     }
 
-    def RealityKitTimeline "Rotacion"
+    def RealityKitTimeline "Rotacion" (
+        references = None
+    )
     {
         reorder nameChildren = ["Track3", "Track", "Track2"]
         def RealityKitTrack "Track2"
@@ -67,7 +44,7 @@ def Xform "Root"
             {
                 string actionKind = "spin"
                 int blendLayer = 400
-                double duration = 2
+                double duration = 3
                 uniform token info:id = "933B971B-ECBA-4296-AE8A-504C88539C6B"
                 float3 localAxis = (0, 0, 1)
                 double startTime = 0
@@ -78,6 +55,136 @@ def Xform "Root"
                     token type = "linear"
                 }
             }
+        }
+    }
+
+    def RealityKitTimeline "Salto"
+    {
+        reorder nameChildren = ["Track", "Track2"]
+        def RealityKitTrack "Track"
+        {
+            def RealityKitAction "Transform_To"
+            {
+                string actionKind = "moveTo"
+                int blendLayer = 300
+                double duration = 1
+                uniform token info:id = "01006DFA-083C-433B-B834-A86922ED2794"
+                float3 position = (0, 0.25, 0)
+                quatf rotation = (0.70710695, -0.70710653, 0, 0)
+                float3 scale = (0.09999999, 0.09999999, 0.09999999)
+                double startTime = 0
+                rel target = </Root/Cloud>
+
+                def RealityKitStruct "transformMode"
+                {
+                    rel referenceEntity = </Root>
+                    token type = "parent"
+                }
+
+                def RealityKitStruct "timingFunction"
+                {
+                    token type = "easeOut"
+                }
+            }
+
+            def RealityKitAction "Notification"
+            {
+                string actionKind = "notification"
+                double duration = 0
+                uniform token info:id = "6000B086-85A6-4BDE-9AD7-8087D5A57015"
+                string notificationName = "hola_mundo"
+                double startTime = 2.0000000002
+                rel target = </Root/Cloud>
+            }
+
+            def RealityKitAction "Transform_To2"
+            {
+                string actionKind = "moveTo"
+                int blendLayer = 300
+                double duration = 1
+                uniform token info:id = "01006DFA-083C-433B-B834-A86922ED2794"
+                float3 position = (0, 0, 0)
+                quatf rotation = (0.70710695, -0.70710653, 0, 0)
+                float3 scale = (0.09999999, 0.09999999, 0.09999999)
+                double startTime = 1.0000000001
+                rel target = </Root/Cloud>
+                float2 ui:nodegraph:node:pos = (20, 20)
+                int ui:nodegraph:node:stackingOrder = 1
+
+                def RealityKitStruct "transformMode"
+                {
+                    rel referenceEntity = </Root>
+                    token type = "parent"
+                }
+
+                def RealityKitStruct "timingFunction"
+                {
+                    token type = "easeIn"
+                }
+            }
+        }
+    }
+
+    def RealityKitComponent "RCP_BehaviorsContainer"
+    {
+        rel behaviors = [
+            </Root/OnAddedToScene>,
+            </Root/OnNotification>,
+        ]
+        uniform token info:id = "RCP.BehaviorsContainer"
+    }
+
+    def RealityKitComponent "InputTarget"
+    {
+        uniform token info:id = "RealityKit.InputTarget"
+    }
+
+    def Preliminary_Behavior "OnAddedToScene"
+    {
+        rel actions = </Root/OnAddedToScene/Action>
+        uniform bool exclusive
+        rel triggers = </Root/OnAddedToScene/Trigger>
+
+        def Preliminary_Trigger "Trigger"
+        {
+            rel affectedObjects = </Root>
+            token info:id = "SceneTransition"
+        }
+
+        def Preliminary_Action "Action"
+        {
+            rel affectedObjects = </Root>
+            rel animationLibraryKey = </Root/Rotacion>
+            rel animationLibraryKeyOverrideKey = </Root/OnAddedToScene/Trigger>
+            token info:id = "PlayTimeline"
+            int loops = 0
+            int performCount = 1
+            token type = "serial"
+        }
+    }
+
+    def Preliminary_Behavior "OnNotification"
+    {
+        rel actions = </Root/OnNotification/Action>
+        uniform bool exclusive
+        rel triggers = </Root/OnNotification/Trigger>
+
+        def Preliminary_Trigger "Trigger"
+        {
+            rel affectedObjects = </Root>
+            string identifier = "da_un_salto"
+            token info:id = "Notification"
+        }
+
+        def Preliminary_Action "Action"
+        {
+            rel affectedObjects = </Root>
+            rel animationLibraryKey = </Root/Salto>
+            rel animationLibraryKeyOverrideKey = </Root/OnNotification/Trigger>
+            token info:id = "PlayTimeline"
+            int loops = 0
+            int performCount = 1
+            token type = "serial"
         }
     }
 }

@@ -27,6 +27,12 @@ struct ContentView: View {
                         raiz_de_escena.add(controlador.raiz_escena)
                     
                     }
+                    .onReceive(NotificationCenter.default.publisher(for: Notification.Name("RealityKit.NotificationTrigger"))){
+                        notificacion in
+                        guard let notificacion = notificacion.userInfo?["RealityKit.NotificationTrigger.Identifier"] as? String else { return }
+                        
+                        controlador.escuchar_comportamiento(notificacion)
+                    }
                 }
             
                 /*
@@ -38,11 +44,28 @@ struct ContentView: View {
             }
         }
         Slider(value: $distancia, in: 0...5)
-        Button{
+        HStack{
+            Button{
+                controlador.alejar_modelos(distancia: distancia)
+            }
+            label: {
+                Text("Alejar Planetas")
+                    .foregroundStyle(Color.red)
+            }
+            Button{
+                controlador.realizar_comando(tipo: .activar_animaacion, carga_util: "da_un_salto")
+            }
+            label: {
+                Text("Saltar Modelo")
+                    .foregroundStyle(Color.red)
+            }
         }
-        label: {
-            Text("Alejar Planetas")
-                .foregroundStyle(Color.red)
+        
+        HStack{
+            ForEach(controlador.historial_comandos){ comando in
+                Text("Comando Ejecutando \(comando.carga_util) ")
+                
+            }
         }
     }
 }

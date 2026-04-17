@@ -15,47 +15,35 @@
     "objectMetadataList" : [
       [
         "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root",
-        "Timeline",
-        "Track2"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root",
-        "Rotacion",
-        "Track2"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root",
-        "Timeline",
-        "Track3"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root",
-        "Rotacion",
-        "Track3"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
         "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "Rotacion"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "Salto"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "Salto",
+        "Track"
       ],
       {
         "isExpanded" : true,
@@ -68,13 +56,44 @@
       ],
       {
         "disallowsFraming" : false,
-        "isExpanded" : false,
+        "isExpanded" : true,
         "isLocked" : false
       },
       [
         "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
         "Root",
-        "Rotacion"
+        "Timeline",
+        "Track2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "Rotacion",
+        "Track3"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "Timeline",
+        "Track3"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "Rotacion",
+        "Track2"
       ],
       {
         "isExpanded" : true,
