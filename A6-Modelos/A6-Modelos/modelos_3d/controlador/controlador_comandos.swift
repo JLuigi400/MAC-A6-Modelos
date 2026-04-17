@@ -11,7 +11,7 @@ enum Comandos{
     case activar_animaacion
 }
 
-public struct Comando{
+public struct Comando: Identifiable{
     public let id = UUID()
     
     let tipo: Comandos
