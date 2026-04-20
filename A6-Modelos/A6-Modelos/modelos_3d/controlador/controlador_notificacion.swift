@@ -13,7 +13,8 @@ extension ControladorAplicacion{
         raiz_escena.scene?.enviar_notificacion(nombre)
     }
     
-    func escuchar_comportamiento (_ nombre: String){
-        print("Nombre de finalizacion comportamiento: \(nombre)")
+    func escuchar_comportamiento(_ nombre: String){
+        /// print("nombre de finalizacion comprotamiento: \(nombre)")
+        actualizar_estados(nombre)
     }
 }

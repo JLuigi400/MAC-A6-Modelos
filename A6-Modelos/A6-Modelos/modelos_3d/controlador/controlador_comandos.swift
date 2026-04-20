@@ -5,27 +5,36 @@
 //  Created by alumno on 4/17/26.
 //
 
-import SwiftUI
-
-enum Comandos{
-    case activar_animaacion
-}
-
-public struct Comando: Identifiable{
-    public let id = UUID()
-    
-    let tipo: Comandos
-    let carga_util: String
-}
-
-extension ControladorAplicacion{
+extension ControladorAplicacion: ProcesarComandos {
     func realizar_comando(tipo: Comandos, carga_util: String) -> Bool {
         switch tipo{
-            case .activar_animaacion:
+            case .activar_animacion:
                 activar_comportamiento(carga_util)
-                historial_comandos.append(Comando(tipo: tipo, carga_util: carga_util))
-            return true
-            
+                historial_comandos.append(
+                        Comando(tipo: tipo, carga_util: carga_util)
+                )
+                return true
+                
+            default:
+                fatalError("[\(#file):\(#function)] NO has implentado esto campeon \(tipo)")
+                return false
+        }
+        
+        return false
+    }
+    
+    func realizar_comando(_ comanda: Comando) -> Bool {
+        switch comanda.tipo{
+            case .activar_animacion:
+                activar_comportamiento(comanda.carga_util)
+                historial_comandos.append(
+                        comanda
+                )
+                return true
+                
+            default:
+                fatalError("[\(#file):\(#function)] NO has implentado esto campeon \(comanda.tipo)")
+                return false
         }
         
         return false

@@ -1,0 +1,26 @@
+//
+//  diseño_comandos.swift
+//  A6-Modelos
+//
+//  Created by alumno on 4/20/26.
+//
+
+import SwiftUI
+
+protocol ProcesarComandos{
+    func realizar_comando(tipo: Comandos, carga_util: String) -> Bool
+    
+    func realizar_comando(_ comanda: Comando) -> Bool
+}
+
+enum Comandos{
+    case activar_animaacion
+    case activar_pantalla
+}
+
+public struct Comando: Identifiable{
+    public let id = UUID()
+    
+    let tipo: Comandos
+    let carga_util: String
+}

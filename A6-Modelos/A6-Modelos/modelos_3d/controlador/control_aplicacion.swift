@@ -22,6 +22,8 @@ public class ControladorAplicacion{
     private var modelos_cargados: [Entity] = []
     
     var historial_comandos: [Comando] = []
+        
+    var maquinas_de_estados: [MaquinaEstadosGenerica] = [MaquinaEstadosAnimacion()]
     
     init(){
         Task.detached(priority: .high){
@@ -56,6 +58,12 @@ public class ControladorAplicacion{
     func alejar_modelos(distancia: Float){
         for modelos_cargado in modelos_cargados {
             modelos_cargado.position.z = 5
+        }
+    }
+    
+    func actualizar_estados(_ mensaje: String){
+        for maquina in maquinas_de_estados{
+            maquina.actualizar(mensaje)
         }
     }
 }
