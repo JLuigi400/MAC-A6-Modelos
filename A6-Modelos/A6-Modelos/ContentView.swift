@@ -49,24 +49,42 @@ struct ContentView: View {
                 controlador.alejar_modelos(distancia: distancia)
             }
             label: {
-                Text("Alejar Planetas")
+                Text("Alejar vista")
                     .foregroundStyle(Color.red)
             }
             Button{
-                controlador.realizar_comando(tipo: .activar_animaacion, carga_util: "da_un_salto")
+                controlador.acercar_modelo(distancia: distancia)
+            }
+            label: {
+                Text("Acercar vista")
+                    .foregroundStyle(Color.red)
+            }
+        }
+        HStack{
+            Button{
+                controlador.realizar_comando(tipo: .activar_animacion, carga_util: "da_un_salto")
             }
             label: {
                 Text("Saltar Modelo")
                     .foregroundStyle(Color.red)
             }
+            Button{
+                
+            }
+            label: {
+                Text("Girar Modelo")
+                    .foregroundStyle(Color.red)
+            }
         }
         
+        /*
         HStack{
             ForEach(controlador.historial_comandos){ comando in
                 Text("Comando Ejecutando \(comando.carga_util) ")
                 
             }
         }
+        */
     }
 }
 

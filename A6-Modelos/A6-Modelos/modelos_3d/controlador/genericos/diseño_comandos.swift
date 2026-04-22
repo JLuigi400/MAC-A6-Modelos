@@ -14,7 +14,7 @@ protocol ProcesarComandos{
 }
 
 enum Comandos{
-    case activar_animaacion
+    case activar_animacion
     case activar_pantalla
 }
 

@@ -12,13 +12,13 @@ class SaltoAnimacion: Estado{
 
     
     func inicializar() {
-        print("HOla desde Saltillo Hermosillo \(#file)")
+        print("Iniciamos \(#file)")
     }
     
     func actualizar(_ evento: String) {
         switch evento{
             default:
-                print("HOla a todos desde el estado de Saltillo Guanajuatillo")
+                print("Dio un salto")
                 contexto?.realizar_cambio_de_estado(a: PlanetasDesaparecidos.nombre)
         }
     }

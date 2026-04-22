@@ -10,6 +10,9 @@
 
 def Xform "Root"
 {
+    float3 xformOp:scale = (0.1, 0.1, 0.1)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
     def "Cloud" (
         active = true
         customData = {
@@ -19,7 +22,7 @@ def Xform "Root"
     )
     {
         quatf xformOp:orient = (0.7071069, -0.70710665, 0, 0)
-        float3 xformOp:scale = (0.1, 0.1, 0.1)
+        float3 xformOp:scale = (1, 1, 1)
         float3 xformOp:translate = (0, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 

@@ -44,10 +44,6 @@ public class ControladorAplicacion{
                 fatalError("NO SE HA PODIDO CARGAR EL MODELO EN \(#function)")
             }
             
-            cloud.position.x = Float(contador_bucle_for / 2) * 1
-            cloud.position.y = Float(contador_bucle_for % 2) * 2.0
-            
-            
             raiz_escena.addChild(cloud)
             modelos_cargados.append(cloud)
             
@@ -57,7 +53,13 @@ public class ControladorAplicacion{
     
     func alejar_modelos(distancia: Float){
         for modelos_cargado in modelos_cargados {
-            modelos_cargado.position.z = 5
+            modelos_cargado.position.z += -2
+        }
+    }
+    
+    func acercar_modelo(distancia: Float){
+        for modelos_cargado in modelos_cargados {
+            modelos_cargado.position.z += 2
         }
     }
     
