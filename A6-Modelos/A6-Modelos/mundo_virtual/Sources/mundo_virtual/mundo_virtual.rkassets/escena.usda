@@ -28,7 +28,31 @@ def Xform "Root"
 
         def RealityKitComponent "RCP_BehaviorsContainer"
         {
+            rel behaviors = </Root/Cloud/OnNotification>
             uniform token info:id = "RCP.BehaviorsContainer"
+        }
+
+        def Preliminary_Behavior "OnNotification"
+        {
+            rel actions = </Root/Cloud/OnNotification/Action>
+            uniform bool exclusive
+            rel triggers = </Root/Cloud/OnNotification/Trigger>
+
+            def Preliminary_Trigger "Trigger"
+            {
+                rel affectedObjects = </Root/Cloud>
+                token info:id = "Notification"
+            }
+
+            def Preliminary_Action "Action"
+            {
+                rel affectedObjects = None
+                rel animationLibraryKeyOverrideKey = </Root/Cloud/OnNotification/Trigger>
+                token info:id = "PlayTimeline"
+                int loops = 0
+                int performCount = 1
+                token type = "serial"
+            }
         }
     }
 
@@ -63,7 +87,6 @@ def Xform "Root"
 
     def RealityKitTimeline "Salto"
     {
-        reorder nameChildren = ["Track", "Track2"]
         def RealityKitTrack "Track"
         {
             def RealityKitAction "Transform_To"
@@ -71,12 +94,38 @@ def Xform "Root"
                 string actionKind = "moveTo"
                 int blendLayer = 300
                 double duration = 1
-                uniform token info:id = "01006DFA-083C-433B-B834-A86922ED2794"
-                float3 position = (0, 0.25, 0)
-                quatf rotation = (0.70710695, -0.70710653, 0, 0)
+                uniform token info:id = "66F20825-8D71-4AA3-AC93-D75F17EA5E70"
+                float3 position = (0, 0.1, 0)
+                quatf rotation = (0.99999994, 0, 0, 0)
                 float3 scale = (0.09999999, 0.09999999, 0.09999999)
                 double startTime = 0
-                rel target = </Root/Cloud>
+                rel target = </Root>
+
+                def RealityKitStruct "transformMode"
+                {
+                    rel referenceEntity = </Root>
+                    token type = "parent"
+                }
+
+                def RealityKitStruct "timingFunction"
+                {
+                    token type = "easeIn"
+                }
+            }
+
+            def RealityKitAction "Transform_To2"
+            {
+                string actionKind = "moveTo"
+                int blendLayer = 300
+                double duration = 1
+                uniform token info:id = "66F20825-8D71-4AA3-AC93-D75F17EA5E70"
+                float3 position = (0, 0, 0)
+                quatf rotation = (0.99999994, 0, 0, 0)
+                float3 scale = (0.09999999, 0.09999999, 0.09999999)
+                double startTime = 1.0000000001
+                rel target = </Root>
+                float2 ui:nodegraph:node:pos = (20, 20)
+                int ui:nodegraph:node:stackingOrder = 1
 
                 def RealityKitStruct "transformMode"
                 {
@@ -94,36 +143,10 @@ def Xform "Root"
             {
                 string actionKind = "notification"
                 double duration = 0
-                uniform token info:id = "6000B086-85A6-4BDE-9AD7-8087D5A57015"
-                string notificationName = "hola_mundo"
-                double startTime = 2.0000000002
+                uniform token info:id = "261B71A3-922B-4852-9CAF-20671C4671E9"
+                string notificationName = "dio un salto"
+                double startTime = 2.0000000002000005
                 rel target = </Root/Cloud>
-            }
-
-            def RealityKitAction "Transform_To2"
-            {
-                string actionKind = "moveTo"
-                int blendLayer = 300
-                double duration = 1
-                uniform token info:id = "01006DFA-083C-433B-B834-A86922ED2794"
-                float3 position = (0, 0, 0)
-                quatf rotation = (0.70710695, -0.70710653, 0, 0)
-                float3 scale = (0.09999999, 0.09999999, 0.09999999)
-                double startTime = 1.0000000001
-                rel target = </Root/Cloud>
-                float2 ui:nodegraph:node:pos = (20, 20)
-                int ui:nodegraph:node:stackingOrder = 1
-
-                def RealityKitStruct "transformMode"
-                {
-                    rel referenceEntity = </Root>
-                    token type = "parent"
-                }
-
-                def RealityKitStruct "timingFunction"
-                {
-                    token type = "easeIn"
-                }
             }
         }
     }
@@ -133,6 +156,7 @@ def Xform "Root"
         rel behaviors = [
             </Root/OnAddedToScene>,
             </Root/OnNotification>,
+            </Root/OnNotification2>,
         ]
         uniform token info:id = "RCP.BehaviorsContainer"
     }
@@ -184,6 +208,108 @@ def Xform "Root"
             rel affectedObjects = </Root>
             rel animationLibraryKey = </Root/Salto>
             rel animationLibraryKeyOverrideKey = </Root/OnNotification/Trigger>
+            token info:id = "PlayTimeline"
+            int loops = 0
+            int performCount = 1
+            token type = "serial"
+        }
+    }
+
+    def RealityKitTimeline "SaltoGiro"
+    {
+        reorder nameChildren = ["Track", "Track2"]
+        def RealityKitTrack "Track"
+        {
+            reorder nameChildren = ["Transform_To", "Transform_To2"]
+            def RealityKitAction "Transform_To"
+            {
+                string actionKind = "moveTo"
+                int blendLayer = 300
+                double duration = 1
+                uniform token info:id = "D881B715-2BA3-452F-A71E-D7C05630C0A8"
+                float3 position = (0, 1.5, -7.450582e-8)
+                quatf rotation = (0.7071069, -0.7071066, 0, 0)
+                float3 scale = (1, 0.99999994, 0.99999994)
+                double startTime = 0
+                rel target = </Root/Cloud>
+
+                def RealityKitStruct "transformMode"
+                {
+                    rel referenceEntity = </Root>
+                    token type = "parent"
+                }
+
+                def RealityKitStruct "timingFunction"
+                {
+                    token type = "easeIn"
+                }
+            }
+
+            def RealityKitAction "Transform_To2"
+            {
+                string actionKind = "moveTo"
+                int blendLayer = 300
+                double duration = 1
+                uniform token info:id = "D881B715-2BA3-452F-A71E-D7C05630C0A8"
+                float3 position = (0, 0, -7.450582e-8)
+                quatf rotation = (0.7071069, -0.7071066, 0, 0)
+                float3 scale = (1, 0.99999994, 0.99999994)
+                double startTime = 1.0000000001
+                rel target = </Root/Cloud>
+                float2 ui:nodegraph:node:pos = (20, 20)
+                int ui:nodegraph:node:stackingOrder = 1
+
+                def RealityKitStruct "transformMode"
+                {
+                    rel referenceEntity = </Root>
+                    token type = "parent"
+                }
+
+                def RealityKitStruct "timingFunction"
+                {
+                    token type = "easeOut"
+                }
+            }
+        }
+
+        def RealityKitTrack "Track2"
+        {
+            def RealityKitAction "Spin"
+            {
+                string actionKind = "spin"
+                int blendLayer = 400
+                double duration = 2
+                uniform token info:id = "D72304DC-01B1-4A63-A28B-632E8E196F52"
+                float3 localAxis = (0, 0, 1)
+                float revolutions = 4
+                double startTime = 0
+                rel target = </Root/Cloud>
+
+                def RealityKitStruct "timingFunction"
+                {
+                }
+            }
+        }
+    }
+
+    def Preliminary_Behavior "OnNotification2"
+    {
+        rel actions = </Root/OnNotification2/Action>
+        uniform bool exclusive
+        rel triggers = </Root/OnNotification2/Trigger>
+
+        def Preliminary_Trigger "Trigger"
+        {
+            rel affectedObjects = </Root>
+            string identifier = "di_un_saltogiro"
+            token info:id = "Notification"
+        }
+
+        def Preliminary_Action "Action"
+        {
+            rel affectedObjects = </Root>
+            rel animationLibraryKey = </Root/SaltoGiro>
+            rel animationLibraryKeyOverrideKey = </Root/OnNotification2/Trigger>
             token info:id = "PlayTimeline"
             int loops = 0
             int performCount = 1

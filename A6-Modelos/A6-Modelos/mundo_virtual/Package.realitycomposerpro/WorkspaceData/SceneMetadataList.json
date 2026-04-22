@@ -53,6 +53,25 @@
       [
         "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
         "Root",
+        "SaltoGiro"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "SaltoGiro",
+        "Track2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
         "Timeline",
         "Track3"
       ],
@@ -74,6 +93,16 @@
         "Root",
         "Timeline",
         "Track2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "SaltoGiro",
+        "Track"
       ],
       {
         "isExpanded" : true,
