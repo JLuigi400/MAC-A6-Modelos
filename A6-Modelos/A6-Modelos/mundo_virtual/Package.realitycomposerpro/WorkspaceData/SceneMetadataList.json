@@ -16,7 +16,8 @@
       [
         "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
         "Root",
-        "Salto"
+        "Timeline",
+        "Track3"
       ],
       {
         "isExpanded" : true,
@@ -24,7 +25,48 @@
       },
       [
         "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root"
+        "Root",
+        "Timeline",
+        "Track2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "Rotacion",
+        "Track2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "Salto",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "SaltoGiro",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
+        "Root",
+        "Salto"
       ],
       {
         "isExpanded" : true,
@@ -42,11 +84,9 @@
       },
       [
         "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root",
-        "Cloud"
+        "Root"
       ],
       {
-        "disallowsFraming" : false,
         "isExpanded" : true,
         "isLocked" : false
       },
@@ -72,10 +112,10 @@
       [
         "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
         "Root",
-        "Timeline",
-        "Track3"
+        "Cloud"
       ],
       {
+        "disallowsFraming" : false,
         "isExpanded" : true,
         "isLocked" : false
       },
@@ -83,46 +123,6 @@
         "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
         "Root",
         "Rotacion"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root",
-        "Timeline",
-        "Track2"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root",
-        "SaltoGiro",
-        "Track"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root",
-        "Rotacion",
-        "Track2"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "BB00397D-01ED-41BA-BBAC-6B26A23D6E84",
-        "Root",
-        "Salto",
-        "Track"
       ],
       {
         "isExpanded" : true,

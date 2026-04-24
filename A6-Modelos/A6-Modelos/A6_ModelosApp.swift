@@ -11,7 +11,8 @@ import SwiftUI
 struct A6_ModelosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SeguimientoImagenes()
+                .environment(ControladorAplicacion())
         }
     }
 }
