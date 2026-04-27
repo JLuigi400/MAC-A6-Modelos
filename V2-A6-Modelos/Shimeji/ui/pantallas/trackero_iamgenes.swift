@@ -1,0 +1,36 @@
+//
+//  trackero_iamgenes.swift
+//  Shimeji
+//
+//  Created by Jadzia Galletas on 24/04/26.
+//
+import SwiftUI
+import RealityKit
+import mundo_virtual
+
+struct SeguimientoImagenes: View {
+    var body: some View {
+        RealityView{ contenido in
+            contenido.camera = .spatialTracking
+            
+            let ancla = AnchorEntity(.image(group: "imagenes", name: "oyla") )
+            
+            // let modelo_a_colocar = ModelEntity(mesh: .generateBox(size: 0.75), materials: [SimpleMaterial(color: .green, isMetallic: true)])
+            if let modelo_a_colocar = try? await Entity(named: "planetas", in: MundoVirtual){
+                ancla.addChild(modelo_a_colocar)
+            }
+            
+            contenido.add(ancla)
+        }
+        .gesture(SpatialTapGesture().targetedToAnyEntity().onEnded({ entidad_apachurrada in
+           print("Se ha pulsado \(entidad_apachurrada)")
+        }))
+                 
+            
+        .background(Color.black)
+    }
+}
+
+#Preview {
+    SeguimientoImagenes()
+}
