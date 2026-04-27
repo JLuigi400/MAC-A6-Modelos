@@ -3,14 +3,9 @@ import Foundation
 /// Bundle for the mundo_virtual project
 public let MundoVirtual = Bundle.module
 
-public let escenario_modelo = "Modelos/Cloud"
+public let escenario_modelo = "cloud"
 
-public let modelos = [
-    "Modelos/Cloud",
-    "Modelos/Cloud",
-    "Modelos/Cloud",
-    "Modelos/Cloud"
-]
+public let modelos=["cloud"]
 
 enum Notificaciones{
     case da_un_salto
