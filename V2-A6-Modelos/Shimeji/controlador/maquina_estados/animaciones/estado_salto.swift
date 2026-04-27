@@ -6,6 +6,7 @@
 //
 
 class SaltoAnimacion: Estado{
+  
     var contexto: (any MaquinaEstadosGenerica)? = nil
     
     static let nombre = "Salto"
@@ -15,14 +16,13 @@ class SaltoAnimacion: Estado{
         print("HOla desde Saltillo Hermosillo \(#file)")
     }
     
-    func actualizar(_ evento: String) {
-        switch evento{
-            case "boton_cerrar":
-                print("Hola mundo porque estan pulsando el boton cerrar")
+    func actualizar(_ tipo_interaccion: TiposDeInteraccion, _ interaccion: BotonesDisponibles) {
+        switch tipo_interaccion{
+            case .entidad:
+                contexto?.enviar_peticion(Comando(tipo: .activar_animacion, carga_util: "da_un_salto"))
+            
             default:
-                return
-                print("HOla a todos desde el estado de Saltillo Guanajuatillo")
-                contexto?.realizar_cambio_de_estado(a: PlanetasDesaparecidos.nombre)
+                print("Error: No tenemos instrucciones para ese comando")
         }
     }
     

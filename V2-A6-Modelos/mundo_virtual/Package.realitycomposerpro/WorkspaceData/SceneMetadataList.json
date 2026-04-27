@@ -4,7 +4,37 @@
       [
         "0570128D-DFD7-4E54-A639-288111E731D2",
         "Root",
+        "anim_1",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0570128D-DFD7-4E54-A639-288111E731D2",
+        "Root",
+        "rotacion_infinita",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0570128D-DFD7-4E54-A639-288111E731D2",
+        "Root",
         "rotacion_infinita"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0570128D-DFD7-4E54-A639-288111E731D2",
+        "Root",
+        "anim_1",
+        "Track2"
       ],
       {
         "isExpanded" : true,
@@ -26,36 +56,6 @@
       {
         "isExpanded" : true,
         "isLocked" : false
-      },
-      [
-        "0570128D-DFD7-4E54-A639-288111E731D2",
-        "Root",
-        "rotacion_infinita",
-        "Track"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "0570128D-DFD7-4E54-A639-288111E731D2",
-        "Root",
-        "anim_1",
-        "Track2"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "0570128D-DFD7-4E54-A639-288111E731D2",
-        "Root",
-        "anim_1",
-        "Track"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
       }
     ]
   },
@@ -63,34 +63,6 @@
     "objectMetadataList" : [
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root"
-      ],
-      {
-        "disallowsFraming" : false,
-        "isExpanded" : false,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
-        "saltito"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
-        "saltito",
-        "Track2"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
         "luna",
         "saltito",
         "Track"
@@ -102,7 +74,8 @@
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
         "luna",
-        "saltito"
+        "saltito",
+        "Track2"
       ],
       {
         "isExpanded" : true,
@@ -110,8 +83,8 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
-        "saltito",
+        "luna",
+        "vuelta_rapida",
         "Track"
       ],
       {
@@ -129,9 +102,55 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
+        "Root"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : false,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "Root",
         "saltito",
         "Track2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "Root",
+        "saltito"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "Root",
+        "saltito",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "luna",
+        "vuelta_rapida"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "luna",
+        "saltito"
       ],
       {
         "isExpanded" : true,

@@ -94,9 +94,9 @@ public class ControladorAplicacion{
         }
     }
     
-    func actualizar_estados(_ mensaje: String){
+    func actualizar_estados(_ tipo_interaccion: TiposDeInteraccion, _ interaccion: BotonesDisponibles){
         for maquina in maquinas_de_estados{
-            maquina.actualizar(mensaje)
+            maquina.actualizar(tipo_interaccion, interaccion)
         }
     }
     

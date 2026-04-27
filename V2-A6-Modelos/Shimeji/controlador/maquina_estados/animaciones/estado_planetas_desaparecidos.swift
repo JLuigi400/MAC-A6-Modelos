@@ -6,6 +6,7 @@
 //
 
 class PlanetasDesaparecidos: Estado{
+
     var contexto: (any MaquinaEstadosGenerica)?
     static let nombre = "Planetas de23parecidos"
     
@@ -13,9 +14,10 @@ class PlanetasDesaparecidos: Estado{
         
     }
     
-    func actualizar(_ evento: String) {
+    func actualizar(_ tipo_interaccion: TiposDeInteraccion, _ interaccion: BotonesDisponibles) {
         print("HOla desde planetas desaparecidos")
     }
+    
     
     func finalizar() {
         

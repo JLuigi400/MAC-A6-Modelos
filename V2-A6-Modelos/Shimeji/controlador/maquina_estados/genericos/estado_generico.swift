@@ -10,7 +10,7 @@ protocol Estado{
     
     func inicializar() -> Void
     
-    func actualizar(_ evento: String) -> Void
+    func actualizar(_ tipo_interaccion: TiposDeInteraccion, _ interaccion: BotonesDisponibles) -> Void
     
     func finalizar() -> Void
     
