@@ -40,7 +40,7 @@ struct Inicio: View{
                             SpatialTapGesture().targetedToAnyEntity().onEnded(
                                 { entidad in
                                     print("[Inicio:gesture] \(entidad.entity.name)")
-                                    controlador.actualizar_estados(.entidad, .so_on_so_on)
+                                    controlador.actualizar_estados(.entidad_salto, .so_on_so_on)
                                 }
                             )
                         )
@@ -67,11 +67,19 @@ struct Inicio: View{
         HStack{
             
             Button{
-                controlador.actualizar_estados(.boton, .realizar_accion)
+                controlador.actualizar_estados(.boton, .realizar_accion_salto)
 
             }
             label: {
-                Text("Realizar accion")
+                Text("Acción - Salto")
+                    .foregroundStyle(Color.red)
+            }
+            Button{
+                controlador.actualizar_estados(.boton, .realizar_accion_saltogiro)
+
+            }
+            label: {
+                Text("Acción - Salto_giro")
                     .foregroundStyle(Color.red)
             }
             

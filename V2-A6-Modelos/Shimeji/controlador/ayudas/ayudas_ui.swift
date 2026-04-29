@@ -6,13 +6,15 @@
 //
 
 enum BotonesDisponibles{
-    case realizar_accion
+    case realizar_accion_salto
+    case realizar_accion_saltogiro
     case cerrar_aplicacion
     case so_on_so_on
 }
 
 enum TiposDeInteraccion{
-    case entidad
+    case entidad_salto
+    case entidad_saltogiro
     case boton
     case notificacion
 }

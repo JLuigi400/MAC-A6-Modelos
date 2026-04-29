@@ -76,8 +76,65 @@
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
         "luna",
-        "vuelta_rapida",
+        "vuelta_rapida"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "luna",
+        "rotacion_infinita",
         "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "Root",
+        "saltito",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "luna",
+        "salto_giro"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "luna"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "luna",
+        "saltito",
+        "Track2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "luna",
+        "salto_giro",
+        "Track2"
       ],
       {
         "isExpanded" : true,
@@ -97,6 +154,25 @@
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
         "Root",
         "saltito"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "luna",
+        "vuelta_rapida",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "luna",
+        "rotacion_infinita"
       ],
       {
         "isExpanded" : true,
@@ -114,16 +190,7 @@
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
         "luna",
-        "vuelta_rapida"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
-        "saltito",
+        "salto_giro",
         "Track"
       ],
       {
@@ -132,7 +199,7 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
+        "luna",
         "saltito",
         "Track"
       ],
@@ -146,25 +213,6 @@
         "saltito"
       ],
       {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
-        "saltito",
-        "Track2"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna"
-      ],
-      {
-        "disallowsFraming" : false,
         "isExpanded" : true,
         "isLocked" : false
       }
