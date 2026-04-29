@@ -18,20 +18,20 @@ struct Inicio: View{
             Rectangle()
             VStack{
                 switch controlador.estado{
-                    case .inciando:
-                        Text("Cargando aplciacion, por favor espera")
+                    case .iniciando:
+                        Text("Iniciando aplicación, por favor, espere.")
                             .foregroundStyle(Color.red)
                         
                     case .todo_cargado:
-                        RealityView{ raiz_de_escena in
-                            raiz_de_escena.camera = .spatialTracking
+                        RealityView{ raiz_escena in
+                            raiz_escena.camera = .spatialTracking
                             
                             //controlador.escenario = raiz_de_escena
                             
-                            raiz_de_escena.add(controlador.raiz_escena)
+                            raiz_escena.add(controlador.raiz_escena)
                             
                             for ancla in controlador.entidades_ancla{
-                                raiz_de_escena.add(ancla)
+                                raiz_escena.add(ancla)
                             }
                             
                         }

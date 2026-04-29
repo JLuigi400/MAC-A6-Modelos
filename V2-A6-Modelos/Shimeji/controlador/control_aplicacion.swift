@@ -17,7 +17,7 @@ public class ControladorAplicacion{
     
     public var raiz_escena: Entity = Entity()
 
-    public var estado: EstadosAplicacion = .inciando
+    public var estado: EstadosAplicacion = .iniciando
     
     private var planetas_cargados: [Entity] = []
     var entidades_ancla: [AnchorEntity] = []
@@ -64,7 +64,7 @@ public class ControladorAplicacion{
         let ancla_rostro = AnchorEntity(.face)
         ancla_rostro.name = "Rostro"
         
-        let ancla_imagen = AnchorEntity(.image(group: "imagenes", name: "oyla"))
+        let ancla_imagen = AnchorEntity(.image(group: "imagenes", name: "megaman"))
         ancla_imagen.name = "imagen"
         
         let ancla = AnchorEntity(plane: .horizontal)

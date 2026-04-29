@@ -6,6 +6,6 @@
 //
 
 public enum EstadosAplicacion{
-    case inciando
+    case iniciando
     case todo_cargado
 }
