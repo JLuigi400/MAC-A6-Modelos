@@ -6,7 +6,7 @@
 //
 
 class MaquinaEstadosAnimacion: MaquinaEstadosGenerica{
-
+    var contexto: (any MaquinaEstadosGenerica)?
     
     var controlador_general: (any ProcesarComandos)?
     
@@ -50,4 +50,10 @@ class MaquinaEstadosAnimacion: MaquinaEstadosGenerica{
         return respuesta
     }
     
+    func inicializar() { }
+    
+    func finalizar() { }
+    
+    func reaccion(estimulo: String) { }
 }
+

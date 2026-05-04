@@ -15,6 +15,7 @@
 /* Begin PBXFileReference section */
 		1861E8142F91DBA000F4600E /* mundo_virtual */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = mundo_virtual; sourceTree = "<group>"; };
 		18EE52272F8D248F006CB192 /* Shimeji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shimeji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB41DDC82FA8DD74000DBFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +44,7 @@
 			children = (
 				1861E8142F91DBA000F4600E /* mundo_virtual */,
 				18EE52292F8D248F006CB192 /* Shimeji */,
+				FB41DDC72FA8DD74000DBFC2 /* Frameworks */,
 				18EE52282F8D248F006CB192 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +55,14 @@
 				18EE52272F8D248F006CB192 /* Shimeji.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FB41DDC72FA8DD74000DBFC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB41DDC82FA8DD74000DBFC2 /* GoogleService-Info.plist */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				18EE524A2F8D2C50006CB192 /* XCLocalSwiftPackageReference "Shimeji/mundo_virtual" */,
+				FB41DDD02FA8EAD9000DBFC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 18EE52282F8D248F006CB192 /* Products */;
@@ -361,6 +372,17 @@
 			relativePath = Shimeji/mundo_virtual;
 		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB41DDD02FA8EAD9000DBFC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.12.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		18EE52412F8D2C19006CB192 /* mundo_virtual */ = {
