@@ -1,11 +1,31 @@
 {
+  "5B6D124F-5D2A-4853-A8B6-2A70B47F36D5" : {
+    "objectMetadataList" : [
+      [
+        "5B6D124F-5D2A-4853-A8B6-2A70B47F36D5",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "5B6D124F-5D2A-4853-A8B6-2A70B47F36D5",
+        "Root",
+        "Moon"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "8E99D1B1-22F8-461E-86B8-10AABDF59F8D" : {
     "objectMetadataList" : [
       [
         "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
         "Root",
-        "Timeline",
-        "Track"
+        "rotacion"
       ],
       {
         "isExpanded" : true,
@@ -24,7 +44,35 @@
       [
         "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
         "Root",
-        "rotacion"
+        "Timeline",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
+        "Root",
+        "salto_giro",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
+        "Root",
+        "salto_giro"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -44,7 +92,7 @@
         "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
         "Root",
         "salto_giro",
-        "Track"
+        "Track2"
       ],
       {
         "isExpanded" : true,
@@ -54,33 +102,6 @@
         "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
         "Root",
         "salto"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
-        "Root",
-        "salto_giro"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
-        "Root",
-        "salto_giro",
-        "Track2"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
-        "Root"
       ],
       {
         "isExpanded" : true,

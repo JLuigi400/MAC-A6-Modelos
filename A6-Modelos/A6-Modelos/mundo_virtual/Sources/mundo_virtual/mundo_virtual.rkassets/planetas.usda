@@ -13,7 +13,7 @@ def Xform "Root"
     reorder nameChildren = ["rotacion", "salto", "salto_giro"]
     def "Moon" (
         active = true
-        references = @cloud.usdz@
+        references = @planeta.usdz@
     )
     {
         float3 xformOp:scale = (1, 1, 1)

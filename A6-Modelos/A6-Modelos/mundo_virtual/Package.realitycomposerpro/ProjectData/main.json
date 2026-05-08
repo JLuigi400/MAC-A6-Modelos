@@ -1,9 +1,11 @@
 {
   "pathsToIds" : {
-    "mundo_virtual\/Sources\/mundo_virtual\/mundo_virtual.rkassets\/Scene.usda" : "8E99D1B1-22F8-461E-86B8-10AABDF59F8D"
+    "mundo_virtual\/Sources\/mundo_virtual\/mundo_virtual.rkassets\/Scene.usda" : "8E99D1B1-22F8-461E-86B8-10AABDF59F8D",
+    "mundo_virtual\/Sources\/mundo_virtual\/mundo_virtual.rkassets\/escenario_modelo.usda" : "5B6D124F-5D2A-4853-A8B6-2A70B47F36D5"
   },
   "projectID" : -3835866561021810590,
   "uuidToIntID" : {
+    "5B6D124F-5D2A-4853-A8B6-2A70B47F36D5" : -5855075282694132137,
     "8E99D1B1-22F8-461E-86B8-10AABDF59F8D" : -8431743038706228763
   }
 }

@@ -50,12 +50,7 @@ public class ControladorAplicacion{
                 fatalError("NO SE HA PODIDO CARGAR EL PLANETA EN \(#function)")
             }
             
-            planeta.position.y = Float(contador_de_bucle_for / 3) * 0.2
-            planeta.position.x = Float(contador_de_bucle_for % 3) * 0.2
-            
             raiz_escena.addChild(planeta)
-            // guard let escenario = raiz_escena.scene else { fatalError("Escena no cargada") }
-            // escenario.add(planeta)
             planetas_cargados.append(planeta)
             
             contador_de_bucle_for += 1
@@ -64,7 +59,7 @@ public class ControladorAplicacion{
         let ancla_rostro = AnchorEntity(.face)
         ancla_rostro.name = "Rostro"
         
-        let ancla_imagen = AnchorEntity(.image(group: "imagenes", name: "megaman"))
+        let ancla_imagen = AnchorEntity(.image(group: "imagenes", name: "oyla"))
         ancla_imagen.name = "imagen"
         
         let ancla = AnchorEntity(plane: .horizontal)
@@ -149,4 +144,3 @@ public class ControladorAplicacion{
         }
     }
 }
-
