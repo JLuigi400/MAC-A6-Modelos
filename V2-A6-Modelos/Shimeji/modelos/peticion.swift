@@ -2,9 +2,8 @@
 //  peticion.swift
 //  Shimeji
 //
-//  Created by alumno on 5/8/26.
+//  Created by Jadzia Galletas on 06/05/26.
 //
-
 import Foundation
 
 enum EstadosPeticion: String, Codable{
@@ -18,7 +17,7 @@ struct Peticion: Codable, Identifiable{
     var estado: EstadosPeticion
     var contexto: Contexto
     var mensaje: String
-    var animacion: String?
     var comando_a_ejecutar: Comando?
     var respuesta: String?
 }
+

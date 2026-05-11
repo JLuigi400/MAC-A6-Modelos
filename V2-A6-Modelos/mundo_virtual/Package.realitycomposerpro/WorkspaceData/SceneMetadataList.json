@@ -4,17 +4,8 @@
       [
         "0570128D-DFD7-4E54-A639-288111E731D2",
         "Root",
-        "anim_1"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "0570128D-DFD7-4E54-A639-288111E731D2",
-        "Root",
         "anim_1",
-        "Track2"
+        "Track"
       ],
       {
         "isExpanded" : true,
@@ -25,14 +16,6 @@
         "Root",
         "rotacion_infinita",
         "Track"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "0570128D-DFD7-4E54-A639-288111E731D2",
-        "Root"
       ],
       {
         "isExpanded" : true,
@@ -51,18 +34,23 @@
         "0570128D-DFD7-4E54-A639-288111E731D2",
         "Root",
         "anim_1",
-        "Track"
+        "Track2"
       ],
       {
         "isExpanded" : true,
         "isLocked" : false
-      }
-    ]
-  },
-  "566FA7DB-A3CE-4A4B-8B34-9CE2769325D7" : {
-    "objectMetadataList" : [
+      },
       [
-        "566FA7DB-A3CE-4A4B-8B34-9CE2769325D7",
+        "0570128D-DFD7-4E54-A639-288111E731D2",
+        "Root",
+        "anim_1"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0570128D-DFD7-4E54-A639-288111E731D2",
         "Root"
       ],
       {
@@ -75,7 +63,7 @@
     "objectMetadataList" : [
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
+        "luna",
         "saltito",
         "Track"
       ],
@@ -86,7 +74,7 @@
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
         "luna",
-        "salto_giro",
+        "saltito",
         "Track2"
       ],
       {
@@ -95,75 +83,9 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root"
-      ],
-      {
-        "disallowsFraming" : false,
-        "isExpanded" : false,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
         "luna",
         "vuelta_rapida",
         "Track"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
-        "rotacion_infinita",
-        "Track"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
-        "saltito"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
-        "saltito"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
-        "salto_giro",
-        "Track"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
-        "saltito",
-        "Track"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
-        "salto_giro"
       ],
       {
         "isExpanded" : true,
@@ -180,7 +102,16 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
+        "Root"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : false,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "Root",
         "saltito",
         "Track2"
       ],
@@ -190,8 +121,18 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
-        "rotacion_infinita"
+        "Root",
+        "saltito"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "Root",
+        "saltito",
+        "Track"
       ],
       {
         "isExpanded" : true,
@@ -208,9 +149,8 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
-        "saltito",
-        "Track2"
+        "luna",
+        "saltito"
       ],
       {
         "isExpanded" : true,

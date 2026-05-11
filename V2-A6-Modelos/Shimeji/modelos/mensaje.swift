@@ -2,9 +2,8 @@
 //  mensaje.swift
 //  Shimeji
 //
-//  Created by alumno on 5/4/26.
+//  Created by Jadzia Galletas on 04/05/26.
 //
-
 import Foundation
 
 struct Mensaje: Identifiable, Codable{

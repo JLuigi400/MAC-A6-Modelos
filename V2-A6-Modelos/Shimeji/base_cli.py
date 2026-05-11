@@ -23,10 +23,10 @@ from firebase_admin import credentials, firestore
 # ------------------------------------------------------------------------------------
 # Configuración
 # ------------------------------------------------------------------------------------
-RUTA_CREDENCIALES = "shimeji_bdd.json"   # Servicio de Firebase
+RUTA_CREDENCIALES = "clave_servicio.json"   # Servicio de Firebase
 COLECCION_PETICIONES = "peticiones"                          # Colección en Firestore
 URL_LM_STUDIO = "http://localhost:1234/v1/chat/completions"  # Endpoint de LM Studio
-MODELO_LM = "llama-3.1-8b-lexi-uncensored-v2"                                    # Nombre del modelo cargado
+MODELO_LM = "local-model"                                    # Nombre del modelo cargado
 REINTENTOS_MAXIMOS = 2
 INTERVALO_CONSULTA = 5                                       # Segundos entre barridos
 
@@ -51,25 +51,26 @@ def construir_instrucciones_sistema(contexto: dict) -> str:
     personaje, e instruye a la IA a responder únicamente con un JSON estructurado.
     """
     historia = contexto.get("historia", "")
+    estado_actual = contexto.get("estado_actual", "")
+    descripcion = contexto.get("descripcion", "")
     personalidad = contexto.get("personalidad", "")
-    estado_emocional = contexto.get("estado_emocional", "")
-    acciones = ", ".join(contexto.get("acciones_disponibles", []))
     estados = ", ".join(contexto.get("estados_disponibles", []))
 
     instrucciones = (
         f"Eres un personaje virtual con las siguientes características:\n"
         f"Historia: {historia}\n"
         f"Personalidad: {personalidad}\n"
-        f"Estado emocional actual: {estado_emocional}\n"
-        f"Acciones disponibles (puedes sugerir activarlas): {acciones}\n"
         f"Estados disponibles: {estados}\n\n"
+        f"Estado actual: {estado_actual}\n\n"
+        f"Descripcion de estado actual: {descripcion}\n\n"
         f"Responde al usuario siendo fiel a tu personalidad e historia.\n"
         f"Tu respuesta debe ser EXCLUSIVAMENTE un objeto JSON válido con esta estructura:\n"
-        f'{{"respuesta": "tu diálogo aquí", "animacion": "nombre o null", '
-        f'"comando": {{"tipo": "activar_animacion o activar_pantalla", "carga_util": "información extra"}} o null}}\n'
+        f'{{"respuesta": "tu diálogo aquí", '
+        f'"comando": {{"tipo": "cambiar_estado o activar_pantalla", "carga_util": "estado deseado de la lista de estados disponibles"}} o null}}\n'
         f"Si no es pertinente, asigna null a los campos 'animacion' y 'comando'.\n"
         f"Responde solo con el JSON, sin texto adicional."
     )
+
     return instrucciones
 
 def consultar_modelo(instrucciones_sistema: str, mensaje_usuario: str) -> dict:
@@ -105,7 +106,7 @@ def consultar_modelo(instrucciones_sistema: str, mensaje_usuario: str) -> dict:
             fin = texto_generado.rfind('}')
             if inicio == -1 or fin == -1:
                 raise ValueError("No se encontró un objeto JSON en la respuesta.")
-            json_limpio = texto_generado[inicio:fin+1]
+            json_limpio = texto_generado[inicio: fin + 1]
             return json.loads(json_limpio)
 
         except Exception as error:
@@ -114,9 +115,7 @@ def consultar_modelo(instrucciones_sistema: str, mensaje_usuario: str) -> dict:
 
     # Si todos los intentos fallan, devolvemos una respuesta genérica
     return {
-        "respuesta": "Lo siento, no pude procesar tu mensaje en este momento.",
-        "animacion": None,
-        "comando": None
+            "respuesta": "Lo siento, este proceso ha fallado. Por favor intenta con otra instruccion o pide se solucione el error",
     }
 
 def construir_comando_si_valido(datos_comando: dict) -> dict | None:
@@ -129,7 +128,7 @@ def construir_comando_si_valido(datos_comando: dict) -> dict | None:
 
     tipo = datos_comando.get("tipo")
     carga = datos_comando.get("carga_util", "")
-    if tipo in ("activar_animacion", "activar_pantalla"):
+    if tipo in ("cambiar_estado", "activar_pantalla"):
         return {
             "id": str(uuid.uuid4()),
             "tipo": tipo,
@@ -163,8 +162,6 @@ def procesar_peticion(documento_referencia, datos_peticion: dict):
     resultado_ia = consultar_modelo(prompt_sistema, mensaje_original)
 
     # 3. Extraer y limpiar campos
-    texto_respuesta = resultado_ia.get("respuesta", "")
-    nombre_animacion = resultado_ia.get("animacion")
     comando_crudo = resultado_ia.get("comando")
 
     comando_estructurado = construir_comando_si_valido(comando_crudo)

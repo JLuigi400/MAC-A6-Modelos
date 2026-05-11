@@ -8,16 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1861E81B2F91DBA000F4600E /* mundo_virtual in Resources */ = {isa = PBXBuildFile; fileRef = 1861E8142F91DBA000F4600E /* mundo_virtual */; };
+		18AD45152FA8D8BC008A9BBC /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 18AD45142FA8D8BC008A9BBC /* FirebaseCore */; };
+		18AD45212FA8DD59008A9BBC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 18AD45202FA8DD59008A9BBC /* FirebaseFirestore */; };
 		18EE52422F8D2C19006CB192 /* mundo_virtual in Frameworks */ = {isa = PBXBuildFile; productRef = 18EE52412F8D2C19006CB192 /* mundo_virtual */; };
 		18EE524C2F8D2C50006CB192 /* mundo_virtual in Frameworks */ = {isa = PBXBuildFile; productRef = 18EE524B2F8D2C50006CB192 /* mundo_virtual */; };
-		FBB254382FAE1FD900726A0F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FBB254372FAE1FD900726A0F /* FirebaseCore */; };
-		FBB2543C2FAE271A00726A0F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FBB2543B2FAE271A00726A0F /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1861E8142F91DBA000F4600E /* mundo_virtual */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = mundo_virtual; sourceTree = "<group>"; };
 		18EE52272F8D248F006CB192 /* Shimeji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shimeji.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB41DDC82FA8DD74000DBFC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -34,8 +33,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EE524C2F8D2C50006CB192 /* mundo_virtual in Frameworks */,
-				FBB2543C2FAE271A00726A0F /* FirebaseFirestore in Frameworks */,
-				FBB254382FAE1FD900726A0F /* FirebaseCore in Frameworks */,
+				18AD45212FA8DD59008A9BBC /* FirebaseFirestore in Frameworks */,
+				18AD45152FA8D8BC008A9BBC /* FirebaseCore in Frameworks */,
 				18EE52422F8D2C19006CB192 /* mundo_virtual in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,12 +42,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18AD45132FA8D8BC008A9BBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18EE521E2F8D248F006CB192 = {
 			isa = PBXGroup;
 			children = (
 				1861E8142F91DBA000F4600E /* mundo_virtual */,
 				18EE52292F8D248F006CB192 /* Shimeji */,
-				FB41DDC72FA8DD74000DBFC2 /* Frameworks */,
+				18AD45132FA8D8BC008A9BBC /* Frameworks */,
 				18EE52282F8D248F006CB192 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,14 +65,6 @@
 				18EE52272F8D248F006CB192 /* Shimeji.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		FB41DDC72FA8DD74000DBFC2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FB41DDC82FA8DD74000DBFC2 /* GoogleService-Info.plist */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,8 +89,8 @@
 			packageProductDependencies = (
 				18EE52412F8D2C19006CB192 /* mundo_virtual */,
 				18EE524B2F8D2C50006CB192 /* mundo_virtual */,
-				FBB254372FAE1FD900726A0F /* FirebaseCore */,
-				FBB2543B2FAE271A00726A0F /* FirebaseFirestore */,
+				18AD45142FA8D8BC008A9BBC /* FirebaseCore */,
+				18AD45202FA8DD59008A9BBC /* FirebaseFirestore */,
 			);
 			productName = Shimeji;
 			productReference = 18EE52272F8D248F006CB192 /* Shimeji.app */;
@@ -124,7 +122,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				18EE524A2F8D2C50006CB192 /* XCLocalSwiftPackageReference "Shimeji/mundo_virtual" */,
-				FB41DDD02FA8EAD9000DBFC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				18AD45122FA8D7B5008A9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 18EE52282F8D248F006CB192 /* Products */;
@@ -286,7 +284,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KJY28FJ797;
+				DEVELOPMENT_TEAM = V624A3T7L3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
@@ -321,7 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KJY28FJ797;
+				DEVELOPMENT_TEAM = V624A3T7L3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
@@ -380,7 +378,7 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FB41DDD02FA8EAD9000DBFC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		18AD45122FA8D7B5008A9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -391,6 +389,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		18AD45142FA8D8BC008A9BBC /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18AD45122FA8D7B5008A9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		18AD45202FA8DD59008A9BBC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18AD45122FA8D7B5008A9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		18EE52412F8D2C19006CB192 /* mundo_virtual */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = mundo_virtual;
@@ -398,16 +406,6 @@
 		18EE524B2F8D2C50006CB192 /* mundo_virtual */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = mundo_virtual;
-		};
-		FBB254372FAE1FD900726A0F /* FirebaseCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FB41DDD02FA8EAD9000DBFC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCore;
-		};
-		FBB2543B2FAE271A00726A0F /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FB41DDD02FA8EAD9000DBFC2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

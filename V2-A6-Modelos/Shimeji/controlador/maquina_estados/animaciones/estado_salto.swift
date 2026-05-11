@@ -6,22 +6,24 @@
 //
 
 class SaltoAnimacion: Estado{
+    var descripcion: String = "Estamos dadno un salto"
+    
+    var posibles_estados: [String] = []
+    
   
     var contexto: (any MaquinaEstadosGenerica)? = nil
     
-    static let nombre = "Salto"
+    static var nombre = "Salto"
 
     
     func inicializar() {
-        print("Bienvenido: \(#file)")
+        print("HOla desde Saltillo Hermosillo \(#file)")
     }
     
     func actualizar(_ tipo_interaccion: TiposDeInteraccion, _ interaccion: BotonesDisponibles) {
         switch tipo_interaccion{
-            case .entidad_salto:
+            case .entidad:
                 contexto?.enviar_peticion(Comando(tipo: .activar_animacion, carga_util: "da_un_salto"))
-            case .entidad_saltogiro:
-                contexto?.enviar_peticion(Comando(tipo: .activar_animacion, carga_util: "da_un_saltogiro"))
             
             default:
                 print("Error: No tenemos instrucciones para ese comando")

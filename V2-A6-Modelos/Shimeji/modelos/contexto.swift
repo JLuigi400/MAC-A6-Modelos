@@ -1,16 +1,16 @@
 //
-//  modelos.swift
+//  contexto .swift
 //  Shimeji
 //
-//  Created by alumno on 5/8/26.
+//  Created by Jadzia Galletas on 06/05/26.
 //
-
 import Foundation
 
 struct Contexto: Codable{
     var historia: String
     var personalidad: String
-    var acciones_disponibles: [String]
     var estados_disponibles: [String]
-    var estado_emocional: String
+    var estado_actual: String
+    var descrpcion: String
 }
+

@@ -1,10 +1,9 @@
-// https://github.com/firebase/firebase-ios-sdk
+//
 //  controlador_chat.swift
 //  Shimeji
 //
-//  Created by alumno on 5/4/26.
+//  Created by Jadzia Galletas on 04/05/26.
 //
-
 import FirebaseFirestore
 import Combine
 
@@ -38,8 +37,7 @@ class ServicioChat{
             _ = try base_de_datos.collection("mensajes").addDocument(from: mensaje)
         }
         catch {
-            print("HEY LISTEN, tiene un error: \(error)")
+            print("Hey, tiene un error \(error)")
         }
     }
 }
-

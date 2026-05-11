@@ -10,7 +10,7 @@
 
 def Xform "luna"
 {
-    reorder nameChildren = ["Moon", "brillitos", "anim_1", "rotacion_infinita", "saltito", "vuelta_rapida", "salto_giro"]
+    reorder nameChildren = ["Moon", "brillitos", "anim_1", "rotacion_infinita", "saltito", "vuelta_rapida"]
     def "Moon" (
         active = true
         references = @Moon.usdz@
@@ -42,7 +42,7 @@ def Xform "luna"
                 bool loops = 1
                 float particleSpeed = 0.06
                 float particleSpeedVariation = 0.04
-                float3 shapeSize = (0.15, 0.15, 0.15)
+                float3 shapeSize = (0.05, 0.05, 0.05)
                 bool spawnInheritParentColor = 1
                 token spawnOccasion = "OnUpdate"
                 float spawnSpreadFactor = 0
@@ -61,7 +61,7 @@ def Xform "luna"
                     float colorEvolutionPower = 1
                     int64 columnCount = 4
                     float dampingFactor = 0.25
-                    float4 endColorA = (0, 0.28464767, 0.5653828, 1)
+                    float4 endColorA = (1, 0.051991113, 1, 1)
                     float4 endColorB = (0, 0.98059916, 1, 1)
                     float frameRate = 30
                     float frameRateVariation = 0
@@ -91,7 +91,7 @@ def Xform "luna"
                     float sizeMultiplierAtEndOfLifespanPower = 3
                     token sortOrder = "IncreasingDepth"
                     float spreadingAngle = 0
-                    float4 startColorA = (0, 0.22880626, 0.016468603, 1)
+                    float4 startColorA = (1, 0.051991113, 1, 1)
                     float4 startColorB = (0.9986965, 0.9674097, 0, 1)
                     float stretchFactor = 0
                     bool useEndColor = 1
@@ -162,7 +162,7 @@ def Xform "luna"
 
         def RealityKitComponent "PointLight"
         {
-            float3 color = (0, 0.8544407, 0)
+            float3 color = (1, 0, 0.4265026)
             token info:id = "RealityKit.PointLight"
             float intensity = 2000
         }
@@ -230,7 +230,6 @@ def Xform "luna"
             </luna/OnAddedToScene>,
             </luna/OnNotification>,
             </luna/OnNotification2>,
-            </luna/OnNotification3>,
         ]
         uniform token info:id = "RCP.BehaviorsContainer"
     }
@@ -412,128 +411,16 @@ def Xform "luna"
             {
                 string actionKind = "spin"
                 int blendLayer = 400
-                double duration = 3
+                double duration = 0.3
                 uniform token info:id = "CC8A73E9-E351-44A9-91C3-6BC3BEB9CC2E"
-                float revolutions = 15
+                float revolutions = 5
                 double startTime = 0
                 rel target = </luna/Moon>
 
                 def RealityKitStruct "timingFunction"
                 {
-                    token type = "linear"
                 }
             }
-        }
-    }
-
-    def RealityKitTimeline "salto_giro"
-    {
-        reorder nameChildren = ["Track", "Track2"]
-        def RealityKitTrack "Track"
-        {
-            def RealityKitAction "Transform_To"
-            {
-                string actionKind = "moveTo"
-                int blendLayer = 300
-                double duration = 1
-                uniform token info:id = "FEFDFA7B-8C0F-4050-9EF4-05C56655B096"
-                float3 position = (0, 0.25, 0)
-                quatf rotation = (1, 0, 0, 0)
-                float3 scale = (1, 1, 1)
-                double startTime = 0
-                rel target = </luna/Moon>
-
-                def RealityKitStruct "transformMode"
-                {
-                    rel referenceEntity = </luna>
-                    token type = "parent"
-                }
-
-                def RealityKitStruct "timingFunction"
-                {
-                    token type = "easeOut"
-                }
-            }
-
-            def RealityKitAction "Transform_To2"
-            {
-                string actionKind = "moveTo"
-                int blendLayer = 300
-                double duration = 1
-                uniform token info:id = "FEFDFA7B-8C0F-4050-9EF4-05C56655B096"
-                float3 position = (0, 0, 0)
-                quatf rotation = (1, 0, 0, 0)
-                float3 scale = (1, 1, 1)
-                double startTime = 1.0000000001
-                rel target = </luna/Moon>
-                float2 ui:nodegraph:node:pos = (20, 20)
-                int ui:nodegraph:node:stackingOrder = 1
-
-                def RealityKitStruct "transformMode"
-                {
-                    rel referenceEntity = </luna>
-                    token type = "parent"
-                }
-
-                def RealityKitStruct "timingFunction"
-                {
-                    token type = "easeIn"
-                }
-            }
-
-            def RealityKitAction "Notification"
-            {
-                string actionKind = "notification"
-                double duration = 0
-                uniform token info:id = "EB95C5DC-B9E2-49F1-B6A7-FF6CD4F25D6D"
-                string notificationName = "dio_salto_giro"
-                double startTime = 2.0000000002
-                rel target = </luna/Moon>
-            }
-        }
-
-        def RealityKitTrack "Track2"
-        {
-            def RealityKitAction "Spin"
-            {
-                string actionKind = "spin"
-                int blendLayer = 400
-                double duration = 2
-                uniform token info:id = "1104CB38-7CA2-4F29-91F8-288FA49D4A80"
-                float revolutions = 30
-                double startTime = 0
-                rel target = </luna/Moon>
-
-                def RealityKitStruct "timingFunction"
-                {
-                    token type = "linear"
-                }
-            }
-        }
-    }
-
-    def Preliminary_Behavior "OnNotification3"
-    {
-        rel actions = </luna/OnNotification3/Action>
-        uniform bool exclusive
-        rel triggers = </luna/OnNotification3/Trigger>
-
-        def Preliminary_Trigger "Trigger"
-        {
-            rel affectedObjects = </luna>
-            string identifier = "da_un_saltogiro"
-            token info:id = "Notification"
-        }
-
-        def Preliminary_Action "Action"
-        {
-            rel affectedObjects = </luna>
-            rel animationLibraryKey = </luna/salto_giro>
-            rel animationLibraryKeyOverrideKey = </luna/OnNotification3/Trigger>
-            token info:id = "PlayTimeline"
-            int loops = 0
-            int performCount = 1
-            token type = "serial"
         }
     }
 }

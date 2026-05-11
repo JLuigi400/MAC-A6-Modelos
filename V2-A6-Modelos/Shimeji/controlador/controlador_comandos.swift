@@ -16,7 +16,7 @@ extension ControladorAplicacion: ProcesarComandos {
                 return true
                 
             default:
-                fatalError("[\(#file):\(#function)] NO has implentado esto: \(tipo), por favor, arreglalo")
+                fatalError("[\(#file):\(#function)] NO has implentado esto campeon \(tipo)")
                 return false
         }
         
@@ -31,9 +31,13 @@ extension ControladorAplicacion: ProcesarComandos {
                         comanda
                 )
                 return true
+            case .activar_pantalla:
+                do {
+                    try? pantallas_emergentes.append( PantallasDisponibles(from: comanda.carga_util as! Decoder) )
+                }
                 
             default:
-                fatalError("[\(#file):\(#function)] NO has implentado esto: \(comanda.tipo), por favor, arreglalo")
+                fatalError("[\(#file):\(#function)] NO has implentado esto campeon \(comanda.tipo)")
                 return false
         }
         

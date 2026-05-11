@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "megaman.jpg",
+      "filename" : "olya-rusakova-9.jpg",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "unit" : "centimeters",
-    "width" : 40
+    "width" : 75
   }
 }
