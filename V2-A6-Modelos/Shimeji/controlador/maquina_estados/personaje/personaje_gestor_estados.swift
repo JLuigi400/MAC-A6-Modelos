@@ -38,7 +38,7 @@ class PersonajeGestorEstados: MaquinaEstadosGenerica{
             personalidad: "Aqui colocamos la personalidad de nuestro agente ",
             estados_disponibles: estado_actual!.posibles_estados,
             estado_actual: nombre_estado_actual!,
-            descrpcion: estado_actual!.descripcion
+            descripcion: estado_actual!.descripcion
         )
         
         return contexto_actual

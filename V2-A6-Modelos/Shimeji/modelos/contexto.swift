@@ -11,6 +11,5 @@ struct Contexto: Codable{
     var personalidad: String
     var estados_disponibles: [String]
     var estado_actual: String
-    var descrpcion: String
+    var descripcion: String
 }
-

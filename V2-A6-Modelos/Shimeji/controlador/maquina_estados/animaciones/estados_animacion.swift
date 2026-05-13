@@ -56,7 +56,7 @@ class MaquinaEstadosAnimacion: MaquinaEstadosGenerica{
             personalidad: "La personaldiad de esta agente",
             estados_disponibles: estado_actual!.posibles_estados,
             estado_actual: "",
-            descrpcion: "",
+            descripcion: "",
         )
         
         return contexto
