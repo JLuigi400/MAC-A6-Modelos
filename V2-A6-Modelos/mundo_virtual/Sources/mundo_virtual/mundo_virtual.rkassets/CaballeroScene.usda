@@ -1,0 +1,144 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (494.60.2)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root" (
+    prepend apiSchemas = ["MaterialBindingAPI"]
+)
+{
+    rel material:binding = </Root/Caballero/_materials/Paladin_MAT> (
+        bindMaterialAs = "weakerThanDescendants"
+    )
+
+    def RealityKitTimeline "reposo"
+    {
+        reorder nameChildren = ["Track2", "Track"]
+        def RealityKitTrack "Track2"
+        {
+            def RealityKitAction "Animation"
+            {
+                string actionKind = "animation"
+                string animation = "default subtree animation"
+                int blendLayer = 500
+                double duration = 2.5333333015441895
+                uniform token info:id = "A64D2865-E341-4432-9C3D-02BA62C4E774"
+                double loopCount = 0
+                bool separateAnimatedValue = 1
+                double startTime = 0
+                rel target = </Root/Caballero>
+
+                def RealityKitStruct "handoffType"
+                {
+                }
+            }
+        }
+
+        def RealityKitTrack "Track"
+        {
+        }
+    }
+
+    def "Caballero" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (-1.5707964, 0, 0)
+        }
+        references = @Caballero.usdc@
+    )
+    {
+        rel material:binding = </Root/Caballero/_materials/Paladin_MAT> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
+        float3 xformOp:scale = (0.1, 0.1, 0.1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "AnimationLibrary"
+        {
+            token info:id = "RealityKit.AnimationLibrary"
+
+            def RealityKitAnimationFile "default_subtree_animation"
+            {
+                uniform bool looping = 1
+                uniform string name = "default subtree animation"
+            }
+        }
+
+        over "Armature" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/Caballero/_materials/Paladin_MAT> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+        }
+
+        def RealityKitComponent "RCP_BehaviorsContainer"
+        {
+            rel behaviors = </Root/Caballero/OnAddedToScene>
+            uniform token info:id = "RCP.BehaviorsContainer"
+        }
+
+        def Preliminary_Behavior "OnAddedToScene"
+        {
+            rel actions = </Root/Caballero/OnAddedToScene/Action>
+            uniform bool exclusive
+            rel triggers = </Root/Caballero/OnAddedToScene/Trigger>
+
+            def Preliminary_Trigger "Trigger"
+            {
+                rel affectedObjects = </Root/Caballero>
+                token info:id = "SceneTransition"
+            }
+
+            def Preliminary_Action "Action"
+            {
+                rel affectedObjects = </Root>
+                rel animationLibraryKey = </Root/reposo>
+                rel animationLibraryKeyOverrideKey = </Root/Caballero/OnAddedToScene/Trigger>
+                token info:id = "PlayTimeline"
+                int loops = 0
+                int performCount = 1
+                token type = "serial"
+            }
+        }
+    }
+
+    def Material "Material" (
+        references = @Caballero.usdc@</root/_materials/Paladin_MAT>
+    )
+    {
+        token cullMode = "unspecified" (
+            allowedTokens = ["unspecified", "none", "front", "back"]
+        )
+        token outputs:mtlx:surface.connect = </Root/Material/PreviewSurface.outputs:out>
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Material/Principled_BSDF.outputs:surface>
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (335.25, 100.5)
+
+        def Shader "PreviewSurface" (
+            active = true
+        )
+        {
+            uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (93.5, 100.5)
+            int ui:nodegraph:node:stackingOrder = 2
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["Advanced"]
+        }
+
+        over "Principled_BSDF" (
+            active = false
+        )
+        {
+        }
+    }
+}
+

@@ -4,8 +4,7 @@
       [
         "0570128D-DFD7-4E54-A639-288111E731D2",
         "Root",
-        "anim_1",
-        "Track"
+        "anim_1"
       ],
       {
         "isExpanded" : true,
@@ -13,9 +12,7 @@
       },
       [
         "0570128D-DFD7-4E54-A639-288111E731D2",
-        "Root",
-        "rotacion_infinita",
-        "Track"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -34,6 +31,16 @@
         "0570128D-DFD7-4E54-A639-288111E731D2",
         "Root",
         "anim_1",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "0570128D-DFD7-4E54-A639-288111E731D2",
+        "Root",
+        "anim_1",
         "Track2"
       ],
       {
@@ -43,15 +50,97 @@
       [
         "0570128D-DFD7-4E54-A639-288111E731D2",
         "Root",
-        "anim_1"
+        "rotacion_infinita",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "1D1666C7-BC11-40F4-9B08-D2017FE5E779" : {
+    "objectMetadataList" : [
+      [
+        "1D1666C7-BC11-40F4-9B08-D2017FE5E779",
+        "Root",
+        "reposo",
+        "Track"
       ],
       {
         "isExpanded" : true,
         "isLocked" : false
       },
       [
-        "0570128D-DFD7-4E54-A639-288111E731D2",
+        "1D1666C7-BC11-40F4-9B08-D2017FE5E779",
+        "Root",
+        "Caballero",
+        "_materials"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1D1666C7-BC11-40F4-9B08-D2017FE5E779",
         "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1D1666C7-BC11-40F4-9B08-D2017FE5E779",
+        "Root",
+        "reposo"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1D1666C7-BC11-40F4-9B08-D2017FE5E779",
+        "Root",
+        "Caballero",
+        "Light"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1D1666C7-BC11-40F4-9B08-D2017FE5E779",
+        "Root",
+        "Caballero"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1D1666C7-BC11-40F4-9B08-D2017FE5E779",
+        "Root",
+        "Timeline",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1D1666C7-BC11-40F4-9B08-D2017FE5E779",
+        "Root",
+        "reposo",
+        "Track2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1D1666C7-BC11-40F4-9B08-D2017FE5E779",
+        "Root",
+        "Material"
       ],
       {
         "isExpanded" : true,
@@ -63,9 +152,8 @@
     "objectMetadataList" : [
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
-        "saltito",
-        "Track"
+        "Root",
+        "saltito"
       ],
       {
         "isExpanded" : true,
@@ -73,7 +161,7 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna",
+        "Root",
         "saltito",
         "Track2"
       ],
@@ -93,25 +181,7 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "luna"
-      ],
-      {
-        "disallowsFraming" : false,
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root"
-      ],
-      {
-        "disallowsFraming" : false,
-        "isExpanded" : false,
-        "isLocked" : false
-      },
-      [
-        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
+        "luna",
         "saltito",
         "Track2"
       ],
@@ -121,16 +191,16 @@
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
-        "saltito"
+        "luna"
       ],
       {
+        "disallowsFraming" : false,
         "isExpanded" : true,
         "isLocked" : false
       },
       [
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
-        "Root",
+        "luna",
         "saltito",
         "Track"
       ],
@@ -151,6 +221,25 @@
         "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
         "luna",
         "saltito"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "Root"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : false,
+        "isLocked" : false
+      },
+      [
+        "E72E0D13-A9A4-4232-B93F-6E24E577B6E1",
+        "Root",
+        "saltito",
+        "Track"
       ],
       {
         "isExpanded" : true,
