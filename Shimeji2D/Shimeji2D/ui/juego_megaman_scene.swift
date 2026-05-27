@@ -13,7 +13,8 @@ class JuegoMegamanScene: SKScene {
     let textoEmocion = SKLabelNode(fontNamed: "Arial")
     let motorDialogo = MotorDialogo()
     var opcionesActuales: [(nodo: SKLabelNode, opcion: OpcionDialogo)] = []
-
+    
+    let fondoNES = SKSpriteNode(imageNamed: "fondo_nes")
     
     override func didMove(to view: SKView) {
         fondo.position = CGPoint(x: frame.midX, y: frame.midY)

@@ -13,58 +13,62 @@ struct ContentView: View {
     @State private var personajeSeleccionado = "megaman"
     @State private var escena = JuegoMegamanScene()
     @State private var mensajeUsuario = ""
+    @State private var personajeActivo = Personaje(id: "megaman", nombre: "Megaman", personalidad: "Heroico y decidido", colorEmocion: "blue", frases: [])
+    @State private var respuestaActual = "Hmm... interesante lo que dices."
 
     var body: some View {
-        
         VStack {
-            SpriteView(scene: escena)
-                .ignoresSafeArea()
+            // Nombre del personaje
+            Text(personajeActivo.nombre)
+                .font(.custom("PressStart2P", size: 14))
+                .foregroundColor(.white)
+                .padding(.top, 10)
 
-            HStack {
-                Button("Megaman") {
-                    personajeSeleccionado = "megaman"
-                    escena.cambiarPersonaje(personajeSeleccionado)
-                }
-                Button("Protoman") {
-                    personajeSeleccionado = "protoman"
-                    escena.cambiarPersonaje(personajeSeleccionado)
-                }
-                Button("Roll") {
-                    personajeSeleccionado = "roll"
-                    escena.cambiarPersonaje(personajeSeleccionado)
-                }
-            }
-            .buttonStyle(.borderedProminent)
-            .padding()
+            // Sprite del personaje
+            Image(personajeActivo.id + "_flat")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 200)
+                .padding(.vertical, 20)
 
-            HStack {
-                Button("Iniciar diálogo") {
-                    if let dialogo = dialogosBase.first(where: { $0.personajeId == personajeSeleccionado }) {
-                        escena.mostrarDialogo(dialogo)
-                    }
-                }
-            }
-            .buttonStyle(.borderedProminent)
-            .padding()
-            
-            HStack{
-                TextField("Escribe tu mensaje...", text: $mensajeUsuario)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            // Marco de diálogo
+            ZStack {
+                Image("marco_dialogo")
+                    .resizable()
+                    .scaledToFit()
+                Text(respuestaActual)
+                    .font(.custom("VT323", size: 18))
+                    .foregroundColor(.white)
                     .padding()
+            }
+            .frame(height: 150)
 
-                Button("Enviar mensaje") {
-                    escena.procesarMensajeUsuario(mensajeUsuario)
-                    mensajeUsuario = ""
+            // Botones y campo de texto
+            VStack {
+                HStack {
+                    Button("Megaman") { personajeSeleccionado = "megaman" }
+                    Button("Protoman") { personajeSeleccionado = "protoman" }
+                    Button("Roll") { personajeSeleccionado = "roll" }
                 }
                 .buttonStyle(.borderedProminent)
-                .padding()
+                .padding(.top, 10)
+
+                HStack {
+                    TextField("Escribe tu mensaje...", text: $mensajeUsuario)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Button("Enviar mensaje") {
+                        escena.procesarMensajeUsuario(mensajeUsuario)
+                        mensajeUsuario = ""
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                .padding(.bottom, 10)
             }
         }
-        .onAppear {
-            escena.scaleMode = .resizeFill
-        }
+        .background(Color("fondo_nes"))
     }
 }
+
 
 #Preview {
     ContentView()
