@@ -8,8 +8,24 @@
 import Foundation
 
 class MotorDialogo {
-    
-    // Función principal para generar respuesta
+    var respuestas: [String: [String: [String]]] = [:]
+
+    init() {
+        cargarRespuestas()
+    }
+
+    func cargarRespuestas() {
+        if let url = Bundle.main.url(forResource: "respuestas", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let json = try JSONDecoder().decode([String: [String: [String]]].self, from: data)
+                respuestas = json
+            } catch {
+                print("Error al cargar respuestas.json: \(error)")
+            }
+        }
+    }
+
     func generarRespuesta(personaje: Personaje, mensajeUsuario: String) -> String {
         let texto = mensajeUsuario.lowercased()
         var categoria = "default"
@@ -24,7 +40,6 @@ class MotorDialogo {
             categoria = "triste"
         }
 
-        // Buscar respuestas del personaje activo
         if let respuestasPersonaje = respuestas[personaje.id],
            let lista = respuestasPersonaje[categoria] {
             return "\(personaje.nombre): \(lista.randomElement()!)"

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBC1E5372FC7996600C4638B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FBC1E5362FC7996600C4638B /* FirebaseAnalytics */; };
 		FBFFCD7D2FC4BB770019DE91 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FBFFCD7C2FC4BB770019DE91 /* FirebaseCore */; };
 		FBFFCD7F2FC4BB7B0019DE91 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FBFFCD7E2FC4BB7B0019DE91 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
@@ -15,9 +16,33 @@
 		FBFFCD202FC4B7240019DE91 /* Shimeji2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shimeji2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FBC1E53B2FC79A5E00C4638B /* Exceptions for "Shimeji2D" folder in "Shimeji2D" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				servicios/respuestas.json,
+			);
+			target = FBFFCD1F2FC4B7240019DE91 /* Shimeji2D */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		FBC1E53C2FC79A5E00C4638B /* Exceptions for "Shimeji2D" folder in "Compile Sources" phase from "Shimeji2D" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = FBFFCD1C2FC4B7240019DE91 /* Sources */;
+			membershipExceptions = (
+				servicios/respuestas.json,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FBFFCD222FC4B7240019DE91 /* Shimeji2D */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FBC1E53B2FC79A5E00C4638B /* Exceptions for "Shimeji2D" folder in "Shimeji2D" target */,
+				FBC1E53C2FC79A5E00C4638B /* Exceptions for "Shimeji2D" folder in "Compile Sources" phase from "Shimeji2D" target */,
+			);
 			path = Shimeji2D;
 			sourceTree = "<group>";
 		};
@@ -30,6 +55,7 @@
 			files = (
 				FBFFCD7D2FC4BB770019DE91 /* FirebaseCore in Frameworks */,
 				FBFFCD7F2FC4BB7B0019DE91 /* FirebaseFirestore in Frameworks */,
+				FBC1E5372FC7996600C4638B /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +108,7 @@
 			packageProductDependencies = (
 				FBFFCD7C2FC4BB770019DE91 /* FirebaseCore */,
 				FBFFCD7E2FC4BB7B0019DE91 /* FirebaseFirestore */,
+				FBC1E5362FC7996600C4638B /* FirebaseAnalytics */,
 			);
 			productName = Shimeji2D;
 			productReference = FBFFCD202FC4B7240019DE91 /* Shimeji2D.app */;
@@ -365,6 +392,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FBC1E5362FC7996600C4638B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBFFCD362FC4BAD00019DE91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		FBFFCD7C2FC4BB770019DE91 /* FirebaseCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FBFFCD362FC4BAD00019DE91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
