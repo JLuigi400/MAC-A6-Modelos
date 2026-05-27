@@ -12,8 +12,10 @@ struct ContentView: View {
     let agentePrueba = PruebaLocalAgente()
     @State private var personajeSeleccionado = "megaman"
     @State private var escena = JuegoMegamanScene()
+    @State private var mensajeUsuario = ""
 
     var body: some View {
+        
         VStack {
             SpriteView(scene: escena)
                 .ignoresSafeArea()
@@ -36,12 +38,27 @@ struct ContentView: View {
             .padding()
 
             HStack {
-                Button("Salto") { agentePrueba.enviarComandoDePrueba("salto") }
-                Button("Ataque") { agentePrueba.enviarComandoDePrueba("ataque") }
-                Button("Feliz") { agentePrueba.enviarComandoDePrueba("feliz") }
+                Button("Iniciar diálogo") {
+                    if let dialogo = dialogosBase.first(where: { $0.personajeId == personajeSeleccionado }) {
+                        escena.mostrarDialogo(dialogo)
+                    }
+                }
             }
             .buttonStyle(.borderedProminent)
             .padding()
+            
+            HStack{
+                TextField("Escribe tu mensaje...", text: $mensajeUsuario)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+
+                Button("Enviar mensaje") {
+                    escena.procesarMensajeUsuario(mensajeUsuario)
+                    mensajeUsuario = ""
+                }
+                .buttonStyle(.borderedProminent)
+                .padding()
+            }
         }
         .onAppear {
             escena.scaleMode = .resizeFill

@@ -1,0 +1,88 @@
+//
+//  respuestas_dialogos.swift
+//  Shimeji2D
+//
+//  Created by alumno on 5/27/26.
+//
+
+// Diccionario de respuestas por personaje y categoría
+let respuestas: [String: [String: [String]]] = [
+    "megaman": [
+        "saludo": [
+            "¡Hola! Me alegra verte de nuevo.",
+            "¡Hey! ¿Listo para la acción?",
+            "¡Qué gusto verte otra vez!"
+        ],
+        "pregunta": [
+            "Buena pregunta… déjame pensar.",
+            "Hmm… eso requiere estrategia.",
+            "Interesante, nunca lo había considerado."
+        ],
+        "feliz": [
+            "¡Eso suena increíble!",
+            "¡Me alegra escuchar eso!",
+            "¡Qué buena noticia!"
+        ],
+        "triste": [
+            "No te preocupes, todo mejora.",
+            "A veces hay días difíciles, pero seguimos adelante.",
+            "Estoy contigo, no estás solo."
+        ],
+        "default": [
+            "Hmm... interesante lo que dices.",
+            "No estoy seguro, pero suena importante."
+        ]
+    ],
+    "protoman": [
+        "saludo": [
+            "Saludos. ¿Listo para la misión?",
+            "Hola. Mantén la calma y observa.",
+            "Buen día, espero estés preparado."
+        ],
+        "pregunta": [
+            "Buena pregunta… la estrategia es clave.",
+            "Analicemos eso con cuidado.",
+            "No hay respuestas simples, pero podemos intentarlo."
+        ],
+        "feliz": [
+            "Me alegra ver tu entusiasmo.",
+            "Eso es lo que necesitamos: energía positiva.",
+            "Excelente actitud."
+        ],
+        "triste": [
+            "No dejes que la tristeza te detenga.",
+            "Incluso los héroes necesitan descansar.",
+            "La calma te ayudará a seguir adelante."
+        ],
+        "default": [
+            "Interesante punto.",
+            "Hmm… eso merece reflexión."
+        ]
+    ],
+    "roll": [
+        "saludo": [
+            "¡Hola! ¡Qué emoción verte!",
+            "¡Hey! Me alegra que estés aquí.",
+            "¡Hola! ¿Listo para explorar?"
+        ],
+        "pregunta": [
+            "Buena pregunta, ¡me encanta aprender cosas nuevas!",
+            "Hmm… déjame pensar un momento.",
+            "¡Qué curiosidad tan divertida!"
+        ],
+        "feliz": [
+            "¡Eso suena genial!",
+            "¡Qué alegría! Me contagias tu energía.",
+            "¡Me encanta ver que estás feliz!"
+        ],
+        "triste": [
+            "No te preocupes, todo estará bien.",
+            "A veces solo necesitamos un descanso.",
+            "Estoy aquí para animarte."
+        ],
+        "default": [
+            "Hmm... interesante lo que dices.",
+            "¡Cuéntame más sobre eso!"
+        ]
+    ]
+]
