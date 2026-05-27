@@ -6,47 +6,54 @@
 //
 
 import SpriteKit
-import FirebaseFirestore
 
 class JuegoMegamanScene: SKScene {
-    let megaman = SKSpriteNode(imageNamed: "megaman_idle")
-    let fondo = SKSpriteNode(imageNamed: "fondo_ciudad")
-    let agente = ServicioAgente()
+    var personajeActivo = personajesBase[0] // Megaman por defecto
+    let fondo = SKSpriteNode(color: .black, size: CGSize(width: 400, height: 800))
+    let textoEmocion = SKLabelNode(fontNamed: "Arial")
 
     override func didMove(to view: SKView) {
+        fondo.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(fondo)
+
+        textoEmocion.fontSize = 28
+        textoEmocion.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(textoEmocion)
+
         NotificationCenter.default.addObserver(
             forName: Notification.Name("Agente.Comando"),
             object: nil,
             queue: .main
         ) { notificacion in
             if let comando = notificacion.userInfo?["comando"] as? Comando {
-                self.ejecutarComando(comando)
+                self.mostrarEmocion(comando.carga_util)
             }
         }
     }
 
-    func ejecutarComando(_ comando: Comando) {
-        switch comando.tipo {
-        case .activar_animacion:
-            realizarAccion(comando.carga_util)
-        case .activar_pantalla:
-            // Aquí podrías abrir una pantalla de inventario, mapa, etc.
-            print("Abrir pantalla: \(comando.carga_util)")
+    func cambiarPersonaje(_ id: String) {
+        if let nuevoPersonaje = personajesBase.first(where: { $0.id == id }) {
+            personajeActivo = nuevoPersonaje
+            fondo.color = colorDesdeString(nuevoPersonaje.colorEmocion)
+            textoEmocion.text = "Ahora estás hablando con \(nuevoPersonaje.nombre)"
+        } else {
+            textoEmocion.text = "Personaje no encontrado"
+            fondo.color = .gray
         }
     }
 
 
-    func realizarAccion(_ tipo: String) {
-        switch tipo {
-        case "salto":
-            megaman.texture = SKTexture(imageNamed: "megaman_jump")
-        case "ataque":
-            megaman.texture = SKTexture(imageNamed: "megaman_attack")
-        case "feliz":
-            megaman.texture = SKTexture(imageNamed: "megaman_happy")
-        default:
-            megaman.texture = SKTexture(imageNamed: "megaman_idle")
-        }
+    func mostrarEmocion(_ tipo: String) {
+        fondo.color = colorDesdeString(personajeActivo.colorEmocion)
+        textoEmocion.text = personajeActivo.frases.randomElement() ?? "Sin respuesta"
     }
 
+    func colorDesdeString(_ color: String) -> UIColor {
+        switch color {
+        case "blue": return .blue
+        case "red": return .red
+        case "yellow": return .yellow
+        default: return .gray
+        }
+    }
 }

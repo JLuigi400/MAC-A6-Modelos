@@ -9,15 +9,43 @@ import SwiftUI
 import SpriteKit
 
 struct ContentView: View {
-    var scene: SKScene {
-        let scene = JuegoMegamanScene()
-        scene.scaleMode = .resizeFill
-        return scene
-    }
+    let agentePrueba = PruebaLocalAgente()
+    @State private var personajeSeleccionado = "megaman"
+    @State private var escena = JuegoMegamanScene()
 
     var body: some View {
-        SpriteView(scene: scene)
-            .ignoresSafeArea()
+        VStack {
+            SpriteView(scene: escena)
+                .ignoresSafeArea()
+
+            HStack {
+                Button("Megaman") {
+                    personajeSeleccionado = "megaman"
+                    escena.cambiarPersonaje(personajeSeleccionado)
+                }
+                Button("Protoman") {
+                    personajeSeleccionado = "protoman"
+                    escena.cambiarPersonaje(personajeSeleccionado)
+                }
+                Button("Roll") {
+                    personajeSeleccionado = "roll"
+                    escena.cambiarPersonaje(personajeSeleccionado)
+                }
+            }
+            .buttonStyle(.borderedProminent)
+            .padding()
+
+            HStack {
+                Button("Salto") { agentePrueba.enviarComandoDePrueba("salto") }
+                Button("Ataque") { agentePrueba.enviarComandoDePrueba("ataque") }
+                Button("Feliz") { agentePrueba.enviarComandoDePrueba("feliz") }
+            }
+            .buttonStyle(.borderedProminent)
+            .padding()
+        }
+        .onAppear {
+            escena.scaleMode = .resizeFill
+        }
     }
 }
 
